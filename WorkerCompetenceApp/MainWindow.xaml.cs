@@ -29,16 +29,7 @@ namespace WorkerCompetenceApp
         {
             InitializeComponent();
 
-            //AddWorker("Volodymur Pigarev", "Boss", "Mechanic");
             PopulateDataGrid();
-
-
-
-
-
-
-
-
         }
 
 
@@ -72,7 +63,7 @@ namespace WorkerCompetenceApp
             }
         }
 
-        private void PopulateDataGrid()
+        public void PopulateDataGrid()
         {
             using WorkerCompetenceContext context = new WorkerCompetenceContext();
 
@@ -93,7 +84,6 @@ namespace WorkerCompetenceApp
             MembersDataGrid.ItemsSource = workers;
         }
 
-
         private void RemoveWorker(int Id)
         {
             using WorkerCompetenceContext context = new WorkerCompetenceContext();
@@ -108,48 +98,71 @@ namespace WorkerCompetenceApp
             }
         }
 
+
         private void AddNewWorkerButton_Click(object sender, RoutedEventArgs e)
         {
             AddWorkerView addWorkerView = new AddWorkerView();
 
             addWorkerView.Show();
         }
+
+        private void DeleteWorkerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MembersDataGrid.SelectedItem != null)
+            {
+                var selectedMember = MembersDataGrid.SelectedItem as Worker;
+
+                if (selectedMember != null)
+                {
+                    RemoveWorker(selectedMember.Id);
+                    PopulateDataGrid();
+                }
+            }
+        }
+
+        private void EditWorkerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MembersDataGrid.SelectedItem != null)
+            {
+                Point mouseLocation = Mouse.GetPosition(MembersDataGrid);
+
+                Worker workerToEdit = MembersDataGrid.SelectedItem as Worker;
+
+                EditWorkerView editWorkerView = new EditWorkerView(mouseLocation, workerToEdit.Id, workerToEdit.FullName, workerToEdit.Position, workerToEdit.Specialization, workerToEdit.Language);
+
+                editWorkerView.Show();
+                
+                var selectedMember = MembersDataGrid.SelectedItem as Worker;
+
+                //if (selectedMember != null)
+                //{
+                //    // Assuming you have controls or a dialog to get the edited information
+                //    string newFullName = GetNewFullNameFromInput();
+                //    string newRole = GetNewRoleFromInput();
+                //    int newAge = GetNewAgeFromInput();
+
+                //    // Call the EditWorker function to update the worker's information
+                //    EditWorker(selectedMember.Id, newFullName, newRole, newAge);
+
+                //    PopulateDataGrid();
+                //}
+            }
+        }
+
+
+
+
+
+
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PopulateDataGrid();
+        }
+
+        
     }
 
 }
-
-
-
-
-
-//Skill Dota = new Skill()
-//{
-//    Id = 8,
-//};
-
-//Worker Vlad = new Worker()
-//{
-//    Name = "Max",
-//    SurName = "Chaba",
-//    Age = 20,
-//    SkillId = Dota.Id
-//};
-
-//context.Workers.Add(Vlad);
-//context.SaveChanges();
-
-//var workers = from worker in context.Workers
-//              where worker.SurName == "Chaba"
-//              orderby worker.Id
-//              select worker;
-
-
-//foreach(Worker w in workers)
-//{
-//    textBox.Text += $"id:     {w.Id}\n";
-//    textBox.Text += $"Name:     {w.Name}\n";
-//    textBox.Text += $"Surname:     {w.SurName}\n";
-//    textBox.Text += $"Skill Id:     {w.SkillId}\n";
-//    textBox.Text += "----------------\n\n";
-
-//}

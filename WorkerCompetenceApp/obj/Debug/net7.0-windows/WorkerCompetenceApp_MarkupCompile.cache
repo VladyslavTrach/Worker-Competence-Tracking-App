@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\App.xaml
-2101992166
+3-59513465
 
-22-168679411
+231995122320
 22890153763
-MainWindow.xaml;Views\AddWorkerView.xaml;
+MainWindow.xaml;Views\AddWorkerView.xaml;Views\EditWorkerView.xaml;
 
 False
 

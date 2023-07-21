@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,8 @@ namespace WorkerCompetenceApp.Views
         {
             InitializeComponent();
         }
+
+
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -52,13 +55,11 @@ namespace WorkerCompetenceApp.Views
 
         private void AddWorkerToDB_Button_Click(object sender, RoutedEventArgs e)
         {
-            string FullName = FullNameTextBox.Text;
-            string Position = PositionTextBox.Text;
-            string Specialization = SpecializationTextBox.Text;
-            string Language = LanguageTextBox.Text;
-            
+            AddWorker(FullNameTextBox.Text, PositionTextBox.Text, SpecializationTextBox.Text, LanguageTextBox.Text);
 
-            AddWorker(FullName, Position, Specialization, Language);
+            this.Close();
         }
+
+
     }
 }

@@ -66,3 +66,5 @@ C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\Resource\1.jpg
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\AddWorkerView.baml
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\AddWorkerView.g.cs
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\EditWorkerView.g.cs
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\EditWorkerView.baml
