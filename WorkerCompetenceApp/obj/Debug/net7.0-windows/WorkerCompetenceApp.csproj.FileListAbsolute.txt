@@ -68,3 +68,10 @@ C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\AddWorkerView.g.cs
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\EditWorkerView.g.cs
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\EditWorkerView.baml
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\DetailsWorkerView.g.cs
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\DetailsWorkerView.baml
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\AddSkillView.g.cs
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\Views\AddSkillView.baml
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\MaterialDesignColors.dll
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll

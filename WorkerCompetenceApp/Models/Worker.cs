@@ -14,5 +14,6 @@ namespace WorkerCompetenceApp.Models
         public string? Position { get; set; }
         public string? Language { get; set; }
         public string? Specialization { get; set; }
+        //public List<Skill> Skills { get; set; }
     }
 }

@@ -50,6 +50,7 @@ namespace WorkerCompetenceApp
                 else
                 {
                     this.WindowState = WindowState.Maximized;
+                    //CornerRadius = 0;
 
                     IsMaximized = true;
                 }
@@ -131,30 +132,9 @@ namespace WorkerCompetenceApp
                 EditWorkerView editWorkerView = new EditWorkerView(mouseLocation, workerToEdit.Id, workerToEdit.FullName, workerToEdit.Position, workerToEdit.Specialization, workerToEdit.Language);
 
                 editWorkerView.Show();
-                
-                var selectedMember = MembersDataGrid.SelectedItem as Worker;
-
-                //if (selectedMember != null)
-                //{
-                //    // Assuming you have controls or a dialog to get the edited information
-                //    string newFullName = GetNewFullNameFromInput();
-                //    string newRole = GetNewRoleFromInput();
-                //    int newAge = GetNewAgeFromInput();
-
-                //    // Call the EditWorker function to update the worker's information
-                //    EditWorker(selectedMember.Id, newFullName, newRole, newAge);
-
-                //    PopulateDataGrid();
-                //}
+               
             }
         }
-
-
-
-
-
-
-
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -162,7 +142,27 @@ namespace WorkerCompetenceApp
             PopulateDataGrid();
         }
 
-        
+        private void ViewDetailWorkerButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddSkillButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MembersDataGrid.SelectedItem != null)
+            {
+                var selectedMember = MembersDataGrid.SelectedItem as Worker;
+
+                if (selectedMember != null)
+                {
+                    AddSkillView addSkillView = new AddSkillView(selectedMember.Id);
+                    addSkillView.Show();
+                }
+            }
+
+           
+
+        }
     }
 
 }

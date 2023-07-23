@@ -11,7 +11,7 @@ namespace WorkerCompetenceApp.Data
     internal class WorkerCompetenceContext : DbContext
     {
         public DbSet<Worker> Workers { get; set; } = null!;
-        public DbSet<Skill> Skills { get; set; } = null!;
+        public DbSet<SkillSet> SkillSets { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

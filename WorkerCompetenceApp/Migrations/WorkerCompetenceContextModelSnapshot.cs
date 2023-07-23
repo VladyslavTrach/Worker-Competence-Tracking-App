@@ -22,7 +22,7 @@ namespace WorkerCompetenceApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WorkerCompetenceApp.Models.Skill", b =>
+            modelBuilder.Entity("WorkerCompetenceApp.Models.SkillSet", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,19 +30,29 @@ namespace WorkerCompetenceApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DateOfAcquisition")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("WorkerId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Skills");
+                    b.HasIndex("WorkerId");
+
+                    b.ToTable("SkillSets");
                 });
 
             modelBuilder.Entity("WorkerCompetenceApp.Models.Worker", b =>
@@ -69,6 +79,17 @@ namespace WorkerCompetenceApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Workers");
+                });
+
+            modelBuilder.Entity("WorkerCompetenceApp.Models.SkillSet", b =>
+                {
+                    b.HasOne("WorkerCompetenceApp.Models.Worker", "worker")
+                        .WithMany()
+                        .HasForeignKey("WorkerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("worker");
                 });
 #pragma warning restore 612, 618
         }

@@ -21,7 +21,7 @@
             </Grid.RowDefinitions>
 
             <Border Grid.Row="0" BorderThickness="0, 0, 0, 1" BorderBrush="Black">
-                <TextBlock Text="Add new worker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 20 0 0" FontSize="32"/>
+                <TextBlock Text="New worker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 20 0 0" FontSize="32"/>
             </Border>
 
             <Grid Grid.Row="1">

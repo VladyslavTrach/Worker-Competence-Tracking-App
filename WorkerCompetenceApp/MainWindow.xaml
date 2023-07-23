@@ -197,7 +197,7 @@
 
                         <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
 
-                        <DataGridTemplateColumn Header="Full Name" IsReadOnly="True" Width="*">
+                        <DataGridTemplateColumn Header="Full Name" IsReadOnly="True" Width="180" CanUserResize="False">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -221,7 +221,10 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <Button Style="{StaticResource GridViewDetailButton}" >
+                                        <Button Style="{StaticResource GridAddSkillButton}" Click="AddSkillButton_Click"> 
+                                            <Icon:PackIconMaterial Kind="PlusBox" Style="{StaticResource GridButtonIcon}"/>
+                                        </Button>
+                                        <Button Style="{StaticResource GridViewDetailButton}" Margin="5 0 0 0" Click="ViewDetailWorkerButton_Click">
                                             <Icon:PackIconMaterial Kind="AccountDetails" Style="{StaticResource GridButtonIcon}"/>
                                         </Button>
                                         <Button Style="{StaticResource GridEditButton}" Margin="5 0 0 0"  Click="EditWorkerButton_Click">

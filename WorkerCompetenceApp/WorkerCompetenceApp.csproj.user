@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AddSkillView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddWorkerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DetailsWorkerView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\EditWorkerView.xaml.cs">
@@ -18,7 +24,13 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\AddSkillView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\AddWorkerView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DetailsWorkerView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\EditWorkerView.xaml">
