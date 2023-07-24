@@ -202,7 +202,7 @@
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="#123456">
-                                            <TextBlock Text="W" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
+                                            <TextBlock Text="G" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
                                         </Border>
 
                                         <TextBlock Text="{Binding FullName}" VerticalAlignment="Center"/>

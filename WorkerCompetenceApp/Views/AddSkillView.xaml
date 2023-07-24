@@ -28,9 +28,6 @@
             </Border>
 
             <Grid Grid.Row="1">
-
-
-
                 <TextBlock Text="Category" Margin="0" FontSize="20" Foreground="#6741d9" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <ComboBox x:Name="CategoryComboBox" Height="40" Width="200" VerticalAlignment="Top" Margin="0 30 0 0" SelectionChanged="CategoryComboBox_SelectionChanged" HorizontalAlignment="Center"/>
 
@@ -44,12 +41,6 @@
                 
                 <TextBlock Text="Date of Acqusition" Margin="0 280 0 0" FontSize="20" Foreground="#6741d9" VerticalAlignment="Top" HorizontalAlignment="Center"/>
                 <DatePicker x:Name="DatePicker" Height="40" Width="200" Margin="0 300 0 0" FontSize="28" Background="#FF3F3F3F"/>
-
-
-
-
-
-
 
             </Grid>
 

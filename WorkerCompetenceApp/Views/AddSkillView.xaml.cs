@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,7 +50,7 @@ namespace WorkerCompetenceApp.Views
             OptionComboBox.SelectedIndex = 0;
             LevelComboBox.SelectedIndex = 0;
 
-            DatePicker.SelectedDate = DateTime.Today;
+            DatePicker.SelectedDate = DateTime.Today.Date;
         }
 
         private void CategoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -181,7 +182,7 @@ namespace WorkerCompetenceApp.Views
             if (selectedDateTime.HasValue)
             {
                 DateTime extractedDate = selectedDateTime.Value;
-                AddSkill(CategoryComboBox.Text, OptionComboBox.Text, LevelComboBox.Text, extractedDate, this.workerId); // Use the stored WorkerId
+                AddSkill(CategoryComboBox.Text, OptionComboBox.Text, LevelComboBox.Text, extractedDate.Date, this.workerId); // Use the stored WorkerId
                 this.Close();
             }
             else
@@ -190,6 +191,9 @@ namespace WorkerCompetenceApp.Views
                 MessageBox.Show("Please select a date.");
             }
         }
+
+
+       
 
     }
 }

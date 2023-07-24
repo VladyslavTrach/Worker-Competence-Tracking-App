@@ -25,6 +25,7 @@ namespace WorkerCompetenceApp
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -144,7 +145,18 @@ namespace WorkerCompetenceApp
 
         private void ViewDetailWorkerButton_Click(object sender, RoutedEventArgs e)
         {
+            if (MembersDataGrid.SelectedItem != null)
+            {
+                var selectedMember = MembersDataGrid.SelectedItem as Worker;
 
+                if (selectedMember != null)
+                {
+                    DetailsWorkerView detailsWorkerView = new DetailsWorkerView(selectedMember.Id);
+                    detailsWorkerView.Show();
+                }
+            }
+
+            
         }
 
         private void AddSkillButton_Click(object sender, RoutedEventArgs e)
