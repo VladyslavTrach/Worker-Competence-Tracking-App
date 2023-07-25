@@ -783,14 +783,14 @@
                   x:Name="Border" 
                   Grid.ColumnSpan="2"
                   CornerRadius="0"
-                  Background="#FF3F3F3F"
+                  Background="#696969"
                   BorderBrush="#FF97A0A5"
                   BorderThickness="1" />
                 <Border 
                   Grid.Column="0"
                   CornerRadius="0" 
                   Margin="1" 
-                  Background="#FF3F3F3F" 
+                  Background="#696969" 
                   BorderBrush="#FF97A0A5"
                   BorderThickness="0,0,1,0" />
                 <Path 
@@ -875,10 +875,10 @@
                               MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border 
                                 x:Name="DropDownBorder"
-                                Background="#FF3F3F3F"
+                                Background="#808080"
 
                                 BorderThickness="1"
-                                BorderBrush="#888888"/>
+                                BorderBrush="#696969"/>
                                     <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                                     </ScrollViewer>

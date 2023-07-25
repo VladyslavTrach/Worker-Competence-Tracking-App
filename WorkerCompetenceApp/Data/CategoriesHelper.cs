@@ -15,11 +15,11 @@ namespace WorkerCompetenceApp.Data
                 "Front-end",
                 "DataBase",
                 "Version Control",
-                "Cloud Services and Deployment",
-                "Software Development Methodologies",
+                "Cloud Services",
+                "Development Methodologies",
                 "Game Development",
                 "Operating Systems",
-                "Software Design Patterns"
+                "Design Patterns"
             };
 
         public static List<string> ProggramingLanguages = new List<string>
@@ -66,6 +66,17 @@ namespace WorkerCompetenceApp.Data
             "Singleton", "Factory Method", "Observer", "Decorator", 
             "Strategy", "Adapter", "Facade", "Command", "Prototype" 
         };
+        public static List<string> FrontEndLanguages = new List<string>
+{
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Angular",
+    "Vue.js"
+};
+
 
         public static List<string> Levels = new List<string> 
         {

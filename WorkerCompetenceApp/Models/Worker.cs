@@ -16,5 +16,7 @@ namespace WorkerCompetenceApp.Models
         public string? Specialization { get; set; }
         public string? Phone { get; set; }
         public string? Email { get; set; }
+        public char? Letter { get; set; }
+        public string? Collor { get; set; }
     }
 }

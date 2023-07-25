@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize">
 
-    <Border Background="#D3D3D3" CornerRadius="15">
+    <Border Background="#979797" CornerRadius="15">
         <Grid>
             <TextBlock Text="Worker Details" FontSize="26" Margin="20 10 0 0"/>
             <Border Background="WhiteSmoke" CornerRadius="10" Height="700" Width="640" Margin="0 40 0 0">
@@ -28,13 +28,13 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0" Orientation="Horizontal">
-                                    <Border Width="100" Height="100" CornerRadius="50" Margin="10 0 10 0" Background="#123456">
+                                    <Border x:Name="RoundBorder" Width="100" Height="100" CornerRadius="50" Margin="10 0 10 0" Background="#123456">
                                         <TextBlock x:Name="CircleTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="White" Margin="0 0 0 1"/>
                                     </Border>
                                     <StackPanel>
                                         <TextBox x:Name="TopNameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 8 0 0" FontSize="22" FontWeight="Medium"/>
                                         <TextBox x:Name="TopPositionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 10 0 0" FontSize="22" FontWeight="Medium" Foreground="#696969"/>
-                                        <TextBox x:Name="TopSpecializationTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 5 0 0" FontSize="22" FontWeight="Normal" Foreground="#696969"/>
+                                        <TextBox x:Name="TopLangTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 5 0 0" FontSize="22" FontWeight="Normal" Foreground="#696969"/>
                                     </StackPanel>
                                 </StackPanel>
 
@@ -75,12 +75,18 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="1">
-                                    
+
                                     <TextBlock Text="Phone Number" Margin="10 55 0 0" FontSize="16" FontWeight="Light"/>
                                     <TextBox x:Name="PhoneTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="14" Width="180" HorizontalAlignment="Left"/>
 
-                                    <TextBlock Text="Email" Margin="10 15 0 0" FontSize="16" FontWeight="Light"/>
+                                    <TextBlock Text="Email" Margin="10 10 0 0" FontSize="16" FontWeight="Light"/>
                                     <TextBox x:Name="EmailNameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="14" Width="180" HorizontalAlignment="Left"/>
+
+                                    <TextBlock Text="Collor" Margin="10 10 0 0" FontSize="16" FontWeight="Light"/>
+                                    <TextBox x:Name="CollorTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="14" Width="180" HorizontalAlignment="Left"/>
+
+                                    <TextBlock Text="Letter" Margin="10 10 0 0" FontSize="16" FontWeight="Light"/>
+                                    <TextBox x:Name="LetterTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="14" Width="180" HorizontalAlignment="Left"/>
                                 </StackPanel>
                             </Grid>
 
@@ -97,7 +103,7 @@
                     <Border Grid.Row="2" Background="WhiteSmoke" CornerRadius="20" Height="250" Width="600" BorderBrush="Gray" BorderThickness="0.8">
                         <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="5" x:Name="SkillsDataGrid">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="50" Binding="{Binding Id}"/>
 
                                 <DataGridTemplateColumn Header="Category" IsReadOnly="True" Width="*" CanUserResize="False">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -137,7 +143,14 @@
                     </Border>
                 </Grid>
             </Border>
+            <Button x:Name="MinimizeButton" Click="MinimizeButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 40 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                <Icon:PackIconMaterial Kind="Minus" />
+            </Button>
+            <Button x:Name="CloseButton" Click="CloseButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 10 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                <Icon:PackIconMaterial Kind="Close" />
+            </Button>
         </Grid>
+        
     </Border>
 
 

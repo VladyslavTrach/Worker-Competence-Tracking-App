@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Height="540" Width="360" 
+        Height="390" Width="660" 
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize">
 
@@ -12,71 +12,70 @@
         <BooleanToVisibilityConverter x:Key="BoolToVisible"/>
     </Window.Resources>
 
-    <Border BorderBrush="Black" BorderThickness="1" Background="#737373" CornerRadius="30" MouseDown="Border_MouseDown">
+    <Border Background="#979797" CornerRadius="15">
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="80"/>
-            </Grid.RowDefinitions>
-
-            <Border Grid.Row="0" BorderThickness="0, 0, 0, 1" BorderBrush="Black">
-                <TextBlock Text="New worker" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 20 0 0" FontSize="32"/>
-            </Border>
-
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <TextBlock Text="Worker Details" FontSize="26" Margin="20 7 0 0"/>
+            <Border Background="WhiteSmoke" CornerRadius="10" Height="320" Width="640" Margin="0 30 0 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
 
 
-                <TextBlock Grid.Column="1" Text="Full Name" Margin="2 13 0 0" FontSize="20" Foreground="#6741d9"/>
-                <Icon:PackIconMaterial Kind="Account" HorizontalAlignment="Right" Margin="0 40 0 0" Height="40" Width="40" Background="#6741d9"/>
-                <TextBox x:Name="FullNameTextBox" FontSize="22" VerticalContentAlignment="Center" Grid.Column="1" Height="40" Width="240" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0 40 0 0"/>
+                    <Border Grid.Row="0" Background="WhiteSmoke" CornerRadius="20" Height="260" Width="600" BorderBrush="Gray" BorderThickness="0.8">
 
-                <TextBlock Grid.Column="1" Text="Position" Margin="2 93 0 0" FontSize="20" Foreground="#6741d9"/>
-                <Icon:PackIconMaterial Kind="Laptop" HorizontalAlignment="Right" Margin="0 120 0 0" Height="40" Width="40" Background="#6741d9"/>
-                <TextBox x:Name="PositionTextBox" FontSize="22" VerticalContentAlignment="Center" Grid.Column="1" Height="40" Width="240" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0 120 0 0"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="Personal Information" Margin="10 10 0 0" FontSize="20"/>
 
-                <TextBlock Grid.Column="1" Text="Specialization" Margin="2 173 0 0" FontSize="20" Foreground="#6741d9"/>
-                <Icon:PackIconMaterial Kind="CodeJson" HorizontalAlignment="Right" Margin="0 200 0 0" Height="40" Width="40" Background="#6741d9"/>
-                <TextBox x:Name="SpecializationTextBox" FontSize="22" VerticalContentAlignment="Center" Grid.Column="1" Height="40" Width="240" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0 200 0 0"/>
+                                <TextBlock Text="Full Name" Margin="10 20 0 0" FontSize="16" FontWeight="Light"/>
+                                <TextBox x:Name="NameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
 
-                <TextBlock Grid.Column="1" Text="Programming Language" Margin="2 253 0 0" FontSize="20" Foreground="#6741d9"/>
-                <Icon:PackIconMaterial Kind="School" HorizontalAlignment="Right" Margin="0 280 0 0" Height="40" Width="40" Background="#6741d9"/>
-                <TextBox x:Name="LanguageTextBox" FontSize="22" VerticalContentAlignment="Center" Grid.Column="1" Height="40" Width="240" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0 280 0 0"/>
+                                <TextBlock Text="Position" Margin="10 15 0 0" FontSize="16" FontWeight="Light"/>
+                                <TextBox x:Name="PositionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
 
+                                <TextBlock Text="Specialization" Margin="10 15 0 0" FontSize="16" FontWeight="Light"/>
+                                <TextBox x:Name="SpecializationTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
+                            </StackPanel>
 
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="Primary Language" Margin="10 55 0 0" FontSize="16" FontWeight="Light"/>
+                                <TextBox x:Name="LangTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
 
+                                <TextBlock Text="Phone Number" Margin="10 15 0 0" FontSize="16" FontWeight="Light"/>
+                                <TextBox x:Name="PhoneTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="16" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
 
+                                <TextBlock Text="Email" Margin="10 23 0 0" FontSize="16" FontWeight="Light"/>
+                                <TextBox x:Name="EmailNameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="16" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
+                            </StackPanel>
+                        </Grid>
 
+                    </Border>
 
-            </Grid>
-
-            <Border Grid.Row="2" BorderBrush="Black" BorderThickness="0, 1, 0, 0">
-                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
-                    <!--<Button Style="{StaticResource AddButton}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="60" Margin="0 20 50 0">
-                        <StackPanel Orientation="Horizontal">
-                            <Icon:PackIconMaterial Kind="ExitToApp" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
-                            <TextBlock Text="Close"/>
-                        </StackPanel>
-                    </Button>-->
-                    <Button x:Name="AddWorkerToDB_Button" Style="{StaticResource AddButton}" VerticalAlignment="Top" Click="AddWorkerToDB_Button_Click" >
+                    <!--Add Button-->
+                    <Button Grid.Row="1" Margin="0 0 0 0" x:Name="AddNewWorkerButton" Style="{StaticResource AddButton}" Click="AddNewWorkerButton_Click" VerticalAlignment="Top" HorizontalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
-                            <TextBlock Text="Add Worker"/>
+                            <TextBlock Text="Add New Worker"/>
                         </StackPanel>
                     </Button>
-                </StackPanel>
+                </Grid>
+
             </Border>
-
-
-
-
-
-
-
+            
+            <Button x:Name="MinimizeButton" Click="MinimizeButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 40 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                <Icon:PackIconMaterial Kind="Minus" />
+            </Button>
+            <Button x:Name="CloseButton" Click="CloseButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 10 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                <Icon:PackIconMaterial Kind="Close" />
+            </Button>
         </Grid>
+
     </Border>
+
 </Window>

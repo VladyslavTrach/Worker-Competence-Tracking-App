@@ -54,7 +54,7 @@ namespace WorkerCompetenceApp.Views
         }
 
         private void CategoryComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {         
+        {
             string selectedCategory = CategoryComboBox.SelectedItem as string;
 
             LevelComboBox.Items.Clear();
@@ -69,7 +69,7 @@ namespace WorkerCompetenceApp.Views
                 case "Programming Language":
                     OptionComboBox.Items.Clear();
                     foreach (string pLang in CategoriesHelper.ProggramingLanguages)
-                    {                        
+                    {
                         OptionComboBox.Items.Add(pLang);
                     }
                     OptionComboBox.SelectedIndex = 0;
@@ -156,6 +156,15 @@ namespace WorkerCompetenceApp.Views
                     OptionComboBox.SelectedIndex = 0;
                     break;
 
+                case "Front-end":
+                    OptionComboBox.Items.Clear();
+                    foreach (string frontEndLang in CategoriesHelper.FrontEndLanguages)
+                    {
+                        OptionComboBox.Items.Add(frontEndLang);
+                    }
+                    OptionComboBox.SelectedIndex = 0;
+                    break;
+
             }
         }
 
@@ -192,8 +201,9 @@ namespace WorkerCompetenceApp.Views
             }
         }
 
-
-       
-
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

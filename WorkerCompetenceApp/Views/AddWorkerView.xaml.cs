@@ -37,29 +37,49 @@ namespace WorkerCompetenceApp.Views
             }
         }
 
-        private void AddWorker(string FullName, string Position, string Specialization, string Language)
+        private void AddWorker(string FullName, string Position, string Specialization, string Language, string Phone, string Email)
         {
+            Random random = new Random();
+            int randomColor = random.Next(100000, 1000000);
+
+            char Letter = FullName[0];
+
             using WorkerCompetenceContext context = new WorkerCompetenceContext();
+
 
             Worker worker = new Worker()
             {
                 FullName = FullName,
                 Position = Position,
                 Specialization = Specialization,
-                Language = Language
+                Language = Language,
+                Phone = Phone,
+                Email = Email,
+                Collor = ("#" + randomColor.ToString()),
+                Letter = Letter
             };
 
             context.Workers.Add(worker);
             context.SaveChanges();
         }
 
-        private void AddWorkerToDB_Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddWorker(FullNameTextBox.Text, PositionTextBox.Text, SpecializationTextBox.Text, LanguageTextBox.Text);
 
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
 
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
 
+        private void AddNewWorkerButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddWorker(NameTextBox.Text, PositionTextBox.Text, SpecializationTextBox.Text, LangTextBox.Text, PhoneTextBox.Text, EmailNameTextBox.Text);
+
+            this.Close();
+
+        }
     }
 }

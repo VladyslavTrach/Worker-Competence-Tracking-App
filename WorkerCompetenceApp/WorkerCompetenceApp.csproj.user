@@ -16,7 +16,7 @@
     <Compile Update="Views\DetailsWorkerView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\EditWorkerView.xaml.cs">
+    <Compile Update="Views\EditSkillView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,7 +33,7 @@
     <Page Update="Views\DetailsWorkerView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\EditWorkerView.xaml">
+    <Page Update="Views\EditSkillView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

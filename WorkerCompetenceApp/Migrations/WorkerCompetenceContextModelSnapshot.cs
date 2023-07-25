@@ -52,7 +52,7 @@ namespace WorkerCompetenceApp.Migrations
 
                     b.HasIndex("WorkerId");
 
-                    b.ToTable("SkillSets", (string)null);
+                    b.ToTable("SkillSets");
                 });
 
             modelBuilder.Entity("WorkerCompetenceApp.Models.Worker", b =>
@@ -63,6 +63,9 @@ namespace WorkerCompetenceApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Collor")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -72,6 +75,9 @@ namespace WorkerCompetenceApp.Migrations
 
                     b.Property<string>("Language")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Letter")
+                        .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
@@ -84,7 +90,7 @@ namespace WorkerCompetenceApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Workers", (string)null);
+                    b.ToTable("Workers");
                 });
 
             modelBuilder.Entity("WorkerCompetenceApp.Models.SkillSet", b =>

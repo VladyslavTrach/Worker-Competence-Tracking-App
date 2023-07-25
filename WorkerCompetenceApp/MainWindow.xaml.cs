@@ -46,12 +46,14 @@ namespace WorkerCompetenceApp
                     this.Width = 1080;
                     this.Height= 720;
 
+                    MainBorder.CornerRadius = new CornerRadius(30);
+
                     IsMaximized = false;
                 }
                 else
                 {
                     this.WindowState = WindowState.Maximized;
-                    //CornerRadius = 0;
+                    MainBorder.CornerRadius = new CornerRadius(0);
 
                     IsMaximized = true;
                 }
@@ -80,7 +82,7 @@ namespace WorkerCompetenceApp
 
             foreach (Worker w in workersSQL)
             {
-                workers.Add(new Worker() { FullName = w.FullName, Id = w.Id, Position = w.Position, Specialization = w.Specialization, Language = w.Language});
+                workers.Add(new Worker() { FullName = w.FullName, Id = w.Id, Position = w.Position, Specialization = w.Specialization, Language = w.Language, Collor = w.Collor, Letter = w.Letter});
             }
 
             MembersDataGrid.ItemsSource = workers;
@@ -122,26 +124,6 @@ namespace WorkerCompetenceApp
             }
         }
 
-        private void EditWorkerButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (MembersDataGrid.SelectedItem != null)
-            {
-                Point mouseLocation = Mouse.GetPosition(MembersDataGrid);
-
-                Worker workerToEdit = MembersDataGrid.SelectedItem as Worker;
-
-                EditWorkerView editWorkerView = new EditWorkerView(mouseLocation, workerToEdit.Id, workerToEdit.FullName, workerToEdit.Position, workerToEdit.Specialization, workerToEdit.Language);
-
-                editWorkerView.Show();
-               
-            }
-        }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            PopulateDataGrid();
-        }
 
         private void ViewDetailWorkerButton_Click(object sender, RoutedEventArgs e)
         {
@@ -174,6 +156,44 @@ namespace WorkerCompetenceApp
 
            
 
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void WindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsMaximized)
+            {
+                this.WindowState = WindowState.Normal;
+                this.Width = 1080;
+                this.Height = 720;
+
+
+                MainBorder.CornerRadius = new CornerRadius(30);
+
+                IsMaximized = false;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+
+                MainBorder.CornerRadius = new CornerRadius(0);
+
+                IsMaximized = true;
+            }
+        }
+
+        private void CogButton_Click(object sender, RoutedEventArgs e)
+        {
+            PopulateDataGrid();
         }
     }
 

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using WorkerCompetenceApp.Data;
 using WorkerCompetenceApp.Models;
 using System.Drawing;
+using Color = System.Windows.Media.Color;
+using ColorConverter = System.Windows.Media.ColorConverter;
 
 namespace WorkerCompetenceApp.Views
 {
@@ -65,18 +67,22 @@ namespace WorkerCompetenceApp.Views
             var worker = context.Workers.SingleOrDefault(w => w.Id == WorkerId);
             if (worker != null)
             {
+                string colorString = worker.Collor; // Assuming worker.Color is a string representing the color (e.g., "#FF0000" for red).
+                Color color = (Color)ColorConverter.ConvertFromString(colorString);
+                RoundBorder.Background = new SolidColorBrush(color);
+                CircleTextBlock.Text = worker.Letter.ToString();
+
                 TopNameTextBox.Text = worker.FullName;
                 TopPositionTextBox.Text = worker.Position;
-                TopSpecializationTextBox.Text = worker.Specialization;
+                TopLangTextBox.Text = worker.Language;
 
                 NameTextBox.Text = worker.FullName;
                 PositionTextBox.Text = worker.Position;
                 SpecializationTextBox.Text = worker.Specialization;
                 PhoneTextBox.Text = worker.Phone;
                 EmailNameTextBox.Text = worker.Email;
-
-                string character = worker.FullName;
-                CircleTextBlock.Text = character[0].ToString();
+                CollorTextBox.Text = worker.Collor;
+                LetterTextBox.Text = worker.Letter.ToString();
             }
         }
 
@@ -86,25 +92,29 @@ namespace WorkerCompetenceApp.Views
             {
                 TopNameTextBox.IsReadOnly = false;
                 TopPositionTextBox.IsReadOnly = false;
-                TopSpecializationTextBox.IsReadOnly = false;
+                TopLangTextBox.IsReadOnly = false;
 
                 isTopEditActive = true;
 
                 TopNameTextBox.Background = Brushes.Green;
                 TopPositionTextBox.Background = Brushes.Green;
-                TopSpecializationTextBox.Background = Brushes.Green;
+                TopLangTextBox.Background = Brushes.Green;
             }
             else
             {
                 TopNameTextBox.IsReadOnly = true;
                 TopPositionTextBox.IsReadOnly = true;
-                TopSpecializationTextBox.IsReadOnly = true;
+                TopLangTextBox.IsReadOnly = true;
 
                 isTopEditActive = false;
 
                 TopNameTextBox.Background = Brushes.Transparent;
                 TopPositionTextBox.Background = Brushes.Transparent;
-                TopSpecializationTextBox.Background = Brushes.Transparent;
+                TopLangTextBox.Background = Brushes.Transparent;
+
+                EditWorker(WorkerId, TopNameTextBox.Text, TopPositionTextBox.Text, SpecializationTextBox.Text, TopLangTextBox.Text, PhoneTextBox.Text, EmailNameTextBox.Text, LetterTextBox.Text, CollorTextBox.Text);
+                PopulateDataGrid();
+
             }
         }
 
@@ -117,6 +127,8 @@ namespace WorkerCompetenceApp.Views
                 SpecializationTextBox.IsReadOnly = false;
                 PhoneTextBox.IsReadOnly = false;
                 EmailNameTextBox.IsReadOnly = false;
+                LetterTextBox.IsReadOnly = false;
+                CollorTextBox.IsReadOnly = false;
 
                 isMidEditActive = true;
 
@@ -125,6 +137,8 @@ namespace WorkerCompetenceApp.Views
                 SpecializationTextBox.Background = Brushes.Green;
                 PhoneTextBox.Background = Brushes.Green;
                 EmailNameTextBox.Background = Brushes.Green;
+                LetterTextBox.Background = Brushes.Green;
+                CollorTextBox.Background = Brushes.Green;
             }
             else
             {
@@ -133,6 +147,9 @@ namespace WorkerCompetenceApp.Views
                 SpecializationTextBox.IsReadOnly = true;
                 PhoneTextBox.IsReadOnly = true;
                 EmailNameTextBox.IsReadOnly = true;
+                LetterTextBox.IsReadOnly = true;
+                CollorTextBox.IsReadOnly = true;
+
 
                 isMidEditActive = false;
 
@@ -141,12 +158,26 @@ namespace WorkerCompetenceApp.Views
                 SpecializationTextBox.Background = Brushes.Transparent;
                 PhoneTextBox.Background = Brushes.Transparent;
                 EmailNameTextBox.Background = Brushes.Transparent;
+                LetterTextBox.Background = Brushes.Transparent;
+                CollorTextBox.Background = Brushes.Transparent;
+
+                EditWorker(WorkerId, NameTextBox.Text, PositionTextBox.Text, SpecializationTextBox.Text, TopLangTextBox.Text, PhoneTextBox.Text, EmailNameTextBox.Text, LetterTextBox.Text, CollorTextBox.Text);
+                PopulateDataGrid();
             }
         }
 
         private void EditSkillButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            if (SkillsDataGrid.SelectedItem != null)
+            {
+                var selectedSkill = SkillsDataGrid.SelectedItem as SkillSet;
+
+                if (selectedSkill != null)
+                {
+                    EditSkillView editSkillView = new EditSkillView(selectedSkill.Id, selectedSkill.Category, selectedSkill.Name, selectedSkill.Level, selectedSkill.DateOfAcquisition);
+                    editSkillView.Show();
+                }
+            }
         }
 
         private void DeleteSkillButton_Click(object sender, RoutedEventArgs e)
@@ -177,19 +208,37 @@ namespace WorkerCompetenceApp.Views
         }
 
 
+        private void EditWorker(int id, string newFullName, string newPosition, string newSpecialization, string newLanguage, string newPhone, string newEmail, string newLetter, string newCollor)
+        {
+            using (WorkerCompetenceContext context = new WorkerCompetenceContext())
+            {
+                Worker workerToEdit = context.Workers.FirstOrDefault(w => w.Id == id);
 
-        //private void RemoveWorker(int Id)
-        //{
-        //    using WorkerCompetenceContext context = new WorkerCompetenceContext();
+                if (workerToEdit != null)
+                {
+                    workerToEdit.FullName = newFullName;
+                    workerToEdit.Position = newPosition;
+                    workerToEdit.Specialization = newSpecialization;
+                    workerToEdit.Language = newLanguage;
+                    workerToEdit.Phone = newPhone; 
+                    workerToEdit.Email = newEmail;
+                    workerToEdit.Letter = newLetter[0];
+                    workerToEdit.Collor = newCollor;
+                }
 
-        //    // Find the worker by their FullName
-        //    Worker workerToRemove = context.Workers.FirstOrDefault(w => w.Id == Id);
+                context.SaveChanges();
+            }
+        }
 
-        //    if (workerToRemove != null)
-        //    {
-        //        context.Workers.Remove(workerToRemove);
-        //        context.SaveChanges();
-        //    }
-        //}
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            EditWorker(WorkerId, NameTextBox.Text, PositionTextBox.Text, SpecializationTextBox.Text, TopLangTextBox.Text, PhoneTextBox.Text, EmailNameTextBox.Text, LetterTextBox.Text, CollorTextBox.Text);
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }
