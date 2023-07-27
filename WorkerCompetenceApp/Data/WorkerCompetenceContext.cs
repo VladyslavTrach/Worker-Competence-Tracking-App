@@ -12,6 +12,7 @@ namespace WorkerCompetenceApp.Data
     {
         public DbSet<Worker> Workers { get; set; } = null!;
         public DbSet<SkillSet> SkillSets { get; set; } = null!;
+        public DbSet<Project> Projects { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

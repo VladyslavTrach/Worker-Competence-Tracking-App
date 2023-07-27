@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="WorkerCompetenceApp.MVVM.Views.WorkerDataGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:local="clr-namespace:WorkerCompetenceApp.MVVM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="880">
+
+    <!--Main Section-->
+    <Grid Grid.Column="1" Margin="30 20 20 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        
+
+        <!--Search TextBox-->
+        <Grid  Width="300" HorizontalAlignment="Left">
+            <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6"
+                               Panel.ZIndex="1" Text="Search Here"/>
+            <TextBox x:Name="txtSearch" Style="{StaticResource TextBoxSearch}"/>
+
+            <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center"
+                                           Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"/>
+
+        </Grid>
+
+        <!--Top Buttons-->
+
+
+        <!--Page Title-->
+        <TextBlock Text="Workers" Grid.Row="2" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"
+                           HorizontalAlignment="Left" Foreground="#121518"/>
+
+        <!--Add Button-->
+        <Button Grid.Row="2" x:Name="AddNewWorkerButton" Style="{StaticResource AddButton}" Click="AddNewWorkerButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
+                <TextBlock Text="Add New Worker"/>
+            </StackPanel>
+        </Button>
+
+        <!--Separator-->
+        <Separator Height="1" Grid.Row="4" Background="#dae2ea" Margin="0 -1 0 10"/>
+
+        <!--Counter Title-->
+        <TextBlock Text="Company Staff" Grid.Row="5" FontSize="18" FontWeight="SemiBold"
+                           Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Text="Press on category to sort by :" Grid.Row="5" FontSize="13" FontWeight="SemiBold" Margin="0 0 10 0"
+                           Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+
+
+        <!--Members Datagrid-->
+        <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="6" x:Name="MembersDataGrid">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
+                    <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
+                        </DataTemplate>
+                    </DataGridCheckBoxColumn.HeaderTemplate>
+                </DataGridCheckBoxColumn>
+
+                <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
+
+                <DataGridTemplateColumn Header="Full Name" IsReadOnly="True" Width="180" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="{Binding Collor}">
+                                    <TextBlock x:Name="IconLetterTextBlock" Text="{Binding Letter}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
+                                </Border>
+
+                                <TextBlock Text="{Binding FullName}" VerticalAlignment="Center"/>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="Position" IsReadOnly="True" Width="*" Binding="{Binding Position}" CanUserResize="False"/>
+                <DataGridTextColumn Header="Specialization" IsReadOnly="True" Width="*" Binding="{Binding Specialization}" CanUserResize="False"/>
+                <DataGridTextColumn Header="Language" IsReadOnly="True" Width="*" Binding="{Binding Language}" CanUserResize="False"/>
+
+
+                <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto" CanUserResize="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource GridAddSkillButton}" Click="AddSkillButton_Click">
+                                    <Icon:PackIconMaterial Kind="PlusBox" Style="{StaticResource GridButtonIcon}"/>
+                                </Button>
+                                <Button Style="{StaticResource GridViewDetailButton}" Margin="5 0 0 0" Click="ViewDetailWorkerButton_Click">
+                                    <Icon:PackIconMaterial Kind="AccountDetails" Style="{StaticResource GridButtonIcon}"/>
+                                </Button>
+                                <Button Style="{StaticResource GridRemoveButton}" Margin="5 0 0 0" Click="DeleteWorkerButton_Click">
+                                    <Icon:PackIconMaterial Kind="TrashCan" Style="{StaticResource GridButtonIcon}"/>
+                                </Button>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>

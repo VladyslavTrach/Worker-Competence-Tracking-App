@@ -3784,11 +3784,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp.csproj",
+      "projectUniqueName": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp.csproj",
       "projectName": "WorkerCompetenceApp",
-      "projectPath": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp.csproj",
+      "projectPath": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp.csproj",
       "packagesPath": "C:\\Users\\vlad0\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\obj\\",
+      "outputPath": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

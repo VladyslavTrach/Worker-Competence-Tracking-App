@@ -22,6 +22,59 @@ namespace WorkerCompetenceApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("ProjectSkillSet", b =>
+                {
+                    b.Property<int>("ProjectsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkillsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProjectsId", "SkillsId");
+
+                    b.HasIndex("SkillsId");
+
+                    b.ToTable("ProjectSkillSet");
+                });
+
+            modelBuilder.Entity("ProjectWorker", b =>
+                {
+                    b.Property<int>("ProjectsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorkersId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProjectsId", "WorkersId");
+
+                    b.HasIndex("WorkersId");
+
+                    b.ToTable("ProjectWorker");
+                });
+
+            modelBuilder.Entity("WorkerCompetenceApp.Models.Project", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Collor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Letter")
+                        .HasColumnType("nvarchar(1)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Projects");
+                });
+
             modelBuilder.Entity("WorkerCompetenceApp.Models.SkillSet", b =>
                 {
                     b.Property<int>("Id")
@@ -91,6 +144,36 @@ namespace WorkerCompetenceApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Workers");
+                });
+
+            modelBuilder.Entity("ProjectSkillSet", b =>
+                {
+                    b.HasOne("WorkerCompetenceApp.Models.Project", null)
+                        .WithMany()
+                        .HasForeignKey("ProjectsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WorkerCompetenceApp.Models.SkillSet", null)
+                        .WithMany()
+                        .HasForeignKey("SkillsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ProjectWorker", b =>
+                {
+                    b.HasOne("WorkerCompetenceApp.Models.Project", null)
+                        .WithMany()
+                        .HasForeignKey("ProjectsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WorkerCompetenceApp.Models.Worker", null)
+                        .WithMany()
+                        .HasForeignKey("WorkersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WorkerCompetenceApp.Models.SkillSet", b =>

@@ -7,16 +7,28 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AddSkillView.xaml.cs">
+    <Compile Update="MVVM\Views\AddProjectView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\AddWorkerView.xaml.cs">
+    <Compile Update="MVVM\Views\AddSkillView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\DetailsWorkerView.xaml.cs">
+    <Compile Update="MVVM\Views\AddWorkerView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\EditSkillView.xaml.cs">
+    <Compile Update="MVVM\Views\DetailsProjectView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\DetailsWorkerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\EditSkillView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\ProjectView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\WorkerDataGridView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,16 +36,28 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddSkillView.xaml">
+    <Page Update="MVVM\Views\AddProjectView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddWorkerView.xaml">
+    <Page Update="MVVM\Views\AddSkillView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\DetailsWorkerView.xaml">
+    <Page Update="MVVM\Views\AddWorkerView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\EditSkillView.xaml">
+    <Page Update="MVVM\Views\DetailsProjectView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\DetailsWorkerView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\EditSkillView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\ProjectView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\WorkerDataGridView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

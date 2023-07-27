@@ -18,5 +18,6 @@ namespace WorkerCompetenceApp.Models
         public string? Email { get; set; }
         public char? Letter { get; set; }
         public string? Collor { get; set; }
+        public List<Project> Projects{ get; set; }
     }
 }

@@ -4,13 +4,18 @@
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         Height="720" Width="1080" 
         WindowStartupLocation="CenterScreen" WindowStyle="None"
+        xmlns:viewModel="clr-namespace:WorkerCompetenceApp.MVVM.ViewModel"
         AllowsTransparency="True" Background="Transparent">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisible"/>        
     </Window.Resources>
-    
-    <Border x:Name="MainBorder" Background="LightGray" CornerRadius="30" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+    <Border x:Name="MainBorder" Background="WhiteSmoke" CornerRadius="30" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -29,7 +34,7 @@
                     </Grid.RowDefinitions>
 
                     <!--Menu Icon-->
-                    <Button Margin="20 28 0 35" Style="{StaticResource TopButton}" Click="CogButton_Click">
+                    <Button Margin="20 28 0 35" Style="{StaticResource TopButton}" >
                         <Icon:PackIconMaterial Kind="Cog" Width="15" Height="15"/>
                     </Button>
 
@@ -56,24 +61,24 @@
 
                             <!--Menu Buttons-->
                             <StackPanel DockPanel.Dock="Top">
-                                <Button Style="{StaticResource MenuButton}">
+                                <Button Style="{StaticResource MenuButton}" Command="{Binding WorkerDataGridCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="HomeVariant" Style="{StaticResource MenuButtonIcon}"/>
-                                        <TextBlock Text="Dashboard"/>
+                                        <TextBlock Text="Workers Dashboard"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
 
                             <StackPanel DockPanel.Dock="Top">
-                                <Button Style="{StaticResource MenuButton}">
+                                <Button Style="{StaticResource MenuButton}" Command="{Binding ProjectCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="CalendarClock" Style="{StaticResource MenuButtonIcon}"/>
-                                        <TextBlock Text="Events"/>
+                                        <TextBlock Text="Project Managment"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
 
-                            <StackPanel DockPanel.Dock="Top">
+                            <!--<StackPanel DockPanel.Dock="Top">
                                 <Button Style="{StaticResource MenuButton}">
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="AccountMultipleOutline" Style="{StaticResource MenuButtonIcon}"/>
@@ -89,7 +94,7 @@
                                         <TextBlock Text="Wallet"/>
                                     </StackPanel>
                                 </Button>
-                            </StackPanel>
+                            </StackPanel>-->
 
                             <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Margin="15 0">
                                 <Button Style="{StaticResource MenuButton}">
@@ -108,9 +113,31 @@
 
             </Grid>
 
-            
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Button x:Name="MinimizeButton" Click="MinimizeButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 70 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                    <Icon:PackIconMaterial Kind="WindowMinimize" />
+                </Button>
+                <Button x:Name="WindowButton" Click="WindowButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 40 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                    <Icon:PackIconMaterial Kind="WindowRestore" />
+                </Button>
+                <Button x:Name="CloseButton" Click="CloseButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 10 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                    <Icon:PackIconMaterial Kind="WindowClose" />
+                </Button>
+
+                <ContentControl Grid.Row="1" Content="{Binding CurrentView}">
+
+                </ContentControl>
+            </Grid>
+           
+
+
             <!--Main Section-->
-            <Grid Grid.Column="1" Margin="30 20 20 20">
+            <!--<Grid Grid.Column="1" Margin="30 20 20 20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="0"/>
@@ -132,7 +159,7 @@
                     <Icon:PackIconMaterial Kind="WindowClose" />
                 </Button>
 
-                <!--Search TextBox-->
+                --><!--Search TextBox--><!--
                 <Grid  Width="300" HorizontalAlignment="Left">
                     <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6"
                                Panel.ZIndex="1" Text="Search Here"
@@ -144,14 +171,14 @@
 
                 </Grid>
                 
-                <!--Top Buttons-->
+                --><!--Top Buttons-->
   
 
-                <!--Page Title-->
+                <!--Page Title--><!--
                 <TextBlock Text="Workers" Grid.Row="2" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"
                            HorizontalAlignment="Left" Foreground="#121518"/>
 
-                <!--Add Button-->
+                --><!--Add Button--><!--
                 <Button Grid.Row="2" x:Name="AddNewWorkerButton" Style="{StaticResource AddButton}" Click="AddNewWorkerButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
@@ -159,10 +186,10 @@
                     </StackPanel>
                 </Button>
 
-                <!--Separator-->
+                --><!--Separator--><!--
                 <Separator Height="1" Grid.Row="4" Background="#dae2ea" Margin="0 -1 0 10"/>
 
-                <!--Counter Title-->
+                --><!--Counter Title--><!--
                 <TextBlock Text="Company Staff" Grid.Row="5" FontSize="18" FontWeight="SemiBold"
                            Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBlock Text="Press on category to sort by :" Grid.Row="5" FontSize="13" FontWeight="SemiBold" Margin="0 0 10 0"
@@ -170,7 +197,7 @@
 
 
                 
-                <!--Members Datagrid-->
+                --><!--Members Datagrid--><!--
                 <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="6" x:Name="MembersDataGrid">
                     <DataGrid.Columns>
                         <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
@@ -231,7 +258,7 @@
                 
                 
                 
-            </Grid>
+            </Grid>-->
         </Grid>
 
 

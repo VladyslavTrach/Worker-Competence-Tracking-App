@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\obj\Debug\net7.0-windows\
 WorkerCompetenceApp
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\App.xaml
-51674791605
+C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\App.xaml
+9-1193114226
 
-39-860808409
+55-140909217
 231-477502774
-MainWindow.xaml;Views\AddSkillView.xaml;Views\AddWorkerView.xaml;Views\DetailsWorkerView.xaml;Views\EditSkillView.xaml;
+MainWindow.xaml;MVVM\Views\AddProjectView.xaml;MVVM\Views\AddSkillView.xaml;MVVM\Views\AddWorkerView.xaml;MVVM\Views\DetailsProjectView.xaml;MVVM\Views\DetailsWorkerView.xaml;MVVM\Views\EditSkillView.xaml;MVVM\Views\ProjectView.xaml;MVVM\Views\WorkerDataGridView.xaml;
 
 False
 

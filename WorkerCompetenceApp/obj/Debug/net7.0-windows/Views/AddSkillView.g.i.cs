@@ -106,7 +106,7 @@ namespace WorkerCompetenceApp.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WorkerCompetenceApp;component/views/addskillview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WorkerCompetenceApp;V1.0.0.0;component/views/addskillview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AddSkillView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

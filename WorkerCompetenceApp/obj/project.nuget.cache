@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tFoxoPz9egFdWDSWsR10rr2gOIPuaeajxNJDq8psm+A2b9oDZYK/ThG/aaG9tjNoVe7JkoKsq2qkuhj7OJ4qhg==",
+  "dgSpecHash": "7ik0d5Q1cz5x9qJxmKtyvCwyneBXmja8nmdFGN8rakAxtBLYOEWZeiRLaDUVx91TlQgI+f6yopG+DqdrZnJKNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp.csproj",
+  "projectFilePath": "C:\\Users\\vlad0\\source\\repos\\C#\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp\\WorkerCompetenceApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vlad0\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\vlad0\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

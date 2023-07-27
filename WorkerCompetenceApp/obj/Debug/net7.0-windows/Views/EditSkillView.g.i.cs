@@ -110,7 +110,7 @@ namespace WorkerCompetenceApp.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WorkerCompetenceApp;component/views/editskillview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WorkerCompetenceApp;V1.0.0.0;component/views/editskillview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\EditSkillView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

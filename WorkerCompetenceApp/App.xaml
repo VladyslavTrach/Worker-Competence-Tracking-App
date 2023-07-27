@@ -3,9 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:local="clr-namespace:WorkerCompetenceApp"
+             xmlns:viewModel="clr-namespace:WorkerCompetenceApp.MVVM.ViewModel"
+             xmlns:view="clr-namespace:WorkerCompetenceApp.MVVM.Views"
              StartupUri="MainWindow.xaml"
     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
     <Application.Resources>
+
+        <DataTemplate DataType="{x:Type viewModel:WorkerDataGridViewModel}">
+            <view:WorkerDataGridView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:ProjectViewModel}">
+            <view:ProjectView/>
+        </DataTemplate>
 
 
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
