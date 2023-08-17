@@ -26,6 +26,21 @@ namespace WorkerCompetenceApp.MVVM.Views
             InitializeComponent();
         }
 
+        private void AddNewProjectButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         //{
         //    if (e.ChangedButton == MouseButton.Left)

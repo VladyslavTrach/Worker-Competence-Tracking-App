@@ -27,42 +27,26 @@
                     <Border Grid.Row="0" Background="WhiteSmoke" CornerRadius="20" Height="260" Width="600" BorderBrush="Gray" BorderThickness="0.8">
 
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="350"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
                             <StackPanel>
                                 <TextBlock Text="Project Information" Margin="10 10 0 0" FontSize="20"/>
 
-                                <TextBlock Text="Name" Margin="10 20 0 0" FontSize="16" FontWeight="Light"/>
-                                <TextBox x:Name="NameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
+                                <TextBlock Text="Name" Margin="10 20 0 0" FontSize="16" FontWeight="Light" HorizontalAlignment="Center"/>
+                                <TextBox x:Name="NameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="28" Width="240" HorizontalAlignment="Center" IsReadOnly="False"/>
 
-                                <TextBlock Text="Position" Margin="10 15 0 0" FontSize="16" FontWeight="Light"/>
-                                <TextBox x:Name="PositionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
-
-                                <TextBlock Text="Specialization" Margin="10 15 0 0" FontSize="16" FontWeight="Light"/>
-                                <TextBox x:Name="SpecializationTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
+                                <TextBlock Text="Description" Margin="10 15 0 0" FontSize="16" FontWeight="Light" HorizontalAlignment="Center"/>
+                                <TextBox x:Name="DescriptionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="500" Height="100" HorizontalAlignment="Center" IsReadOnly="False" BorderThickness="1"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Column="1">
-                                <TextBlock Text="Primary Language" Margin="10 55 0 0" FontSize="16" FontWeight="Light"/>
-                                <TextBox x:Name="LangTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
-
-                                <TextBlock Text="Phone Number" Margin="10 15 0 0" FontSize="16" FontWeight="Light"/>
-                                <TextBox x:Name="PhoneTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="16" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
-
-                                <TextBlock Text="Email" Margin="10 23 0 0" FontSize="16" FontWeight="Light"/>
-                                <TextBox x:Name="EmailNameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="16" Width="180" HorizontalAlignment="Left" IsReadOnly="False"/>
-                            </StackPanel>
+                            
                         </Grid>
 
                     </Border>
 
                     <!--Add Button-->
-                    <Button Grid.Row="1" Margin="0 0 0 0" x:Name="AddNewWorkerButton" Style="{StaticResource AddButton}" Click="AddNewWorkerButton_Click" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <Button Grid.Row="1" Margin="0 0 0 0" x:Name="AddNewProjectButton" Style="{StaticResource AddButton}" Click="AddNewProjectButton_Click" VerticalAlignment="Top" HorizontalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
-                            <TextBlock Text="Add New Worker"/>
+                            <TextBlock Text="Add New Project"/>
                         </StackPanel>
                     </Button>
                 </Grid>

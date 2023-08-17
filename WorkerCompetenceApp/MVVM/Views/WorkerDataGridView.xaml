@@ -42,6 +42,11 @@
                            HorizontalAlignment="Left" Foreground="#121518"/>
 
         <!--Add Button-->
+
+        <!--Menu Icon-->
+        <Button Grid.Row="2" x:Name="RefreshButton" Style="{StaticResource TopButton}" Margin="125 30 0 0" HorizontalAlignment="Left" Click="RefreshButton_Click">
+            <Icon:PackIconMaterial Kind="Refresh" Width="15" Height="15"/>
+        </Button>
         <Button Grid.Row="2" x:Name="AddNewWorkerButton" Style="{StaticResource AddButton}" Click="AddNewWorkerButton_Click">
             <StackPanel Orientation="Horizontal">
                 <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>

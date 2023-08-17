@@ -73,7 +73,7 @@
 
                 <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
 
-                <DataGridTemplateColumn Header="Name" IsReadOnly="True" Width="600" CanUserResize="False">
+                <DataGridTemplateColumn Header="Name" IsReadOnly="True" Width="200" CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -88,12 +88,14 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
+                <DataGridTextColumn Header="Description" IsReadOnly="True" Width="*" Binding="{Binding Description}" CanUserResize="False"/>
+
 
                 <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto" CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource GridViewDetailButton}" Margin="5 0 0 0" >
+                                <Button Style="{StaticResource GridViewDetailButton}" Margin="5 0 0 0" Click="ViewDetailProjectButton_Click">
                                     <Icon:PackIconMaterial Kind="AccountDetails" Style="{StaticResource GridButtonIcon}"/>
                                 </Button>
                                 <Button Style="{StaticResource GridRemoveButton}" Margin="5 0 0 0" Click="DeleteProjectButton_Click">
@@ -104,7 +106,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
+                
+                
             </DataGrid.Columns>
         </DataGrid>
 

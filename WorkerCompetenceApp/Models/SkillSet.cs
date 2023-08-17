@@ -14,6 +14,7 @@ namespace WorkerCompetenceApp.Models
         public string Level { get; set; }
         public DateTime DateOfAcquisition { get; set; }
         public int WorkerId { get; set; }
+        public int ProjectId { get; set; }
         public Worker worker { get; set; } = null!;
         public List<Project> Projects { get; set; }
     }

@@ -34,7 +34,7 @@
                     </Grid.RowDefinitions>
 
                     <!--Menu Icon-->
-                    <Button Margin="20 28 0 35" Style="{StaticResource TopButton}" >
+                    <Button Margin="20 28 0 35" Style="{StaticResource TopButton}">
                         <Icon:PackIconMaterial Kind="Cog" Width="15" Height="15"/>
                     </Button>
 

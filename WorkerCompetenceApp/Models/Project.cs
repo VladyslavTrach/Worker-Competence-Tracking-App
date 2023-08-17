@@ -10,6 +10,7 @@ namespace WorkerCompetenceApp.Models
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
+        public string? Description { get; set; }
         public char? Letter { get; set; }
         public string? Collor { get; set; }
         public List<Worker> Workers { get; set; }

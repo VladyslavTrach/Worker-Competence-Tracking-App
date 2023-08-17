@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using WorkerCompetenceApp.Data;
 using WorkerCompetenceApp.Models;
 using WorkerCompetenceApp.Views;
-
+using WorkerCompetenceApp.MVVM.Views;
 
 namespace WorkerCompetenceApp
 {
@@ -98,6 +98,10 @@ namespace WorkerCompetenceApp
             }
         }
 
+        private void RefreshButon_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 
 }

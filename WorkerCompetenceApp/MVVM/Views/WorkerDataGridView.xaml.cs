@@ -24,9 +24,16 @@ namespace WorkerCompetenceApp.MVVM.Views
     /// </summary>
     public partial class WorkerDataGridView : UserControl
     {
+
+
         public WorkerDataGridView()
         {
             InitializeComponent();
+            PopulateDataGrid();
+        }
+
+        private void AddWorkerView_WorkerAdded(object sender, EventArgs e)
+        {
             PopulateDataGrid();
         }
 
@@ -69,7 +76,6 @@ namespace WorkerCompetenceApp.MVVM.Views
         private void AddNewWorkerButton_Click(object sender, RoutedEventArgs e)
         {
             AddWorkerView addWorkerView = new AddWorkerView();
-
             addWorkerView.Show();
         }
 
@@ -121,7 +127,7 @@ namespace WorkerCompetenceApp.MVVM.Views
 
         }
 
-        private void CogButton_Click(object sender, RoutedEventArgs e)
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             PopulateDataGrid();
         }

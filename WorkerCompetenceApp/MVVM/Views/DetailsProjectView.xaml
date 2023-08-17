@@ -5,8 +5,139 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkerCompetenceApp.MVVM.Views"
         mc:Ignorable="d"
-        Title="DetailsProjectView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Height="780" Width="660" 
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize">
+
+    <Border Background="#979797" CornerRadius="15">
+        <Grid>
+            <TextBlock Text="Project Details" FontSize="26" Margin="20 10 0 0"/>
+            <Border Background="WhiteSmoke" CornerRadius="10" Height="700" Width="640" Margin="0 40 0 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140"/>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="270"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Background="WhiteSmoke" CornerRadius="20" Height="120" Width="600" BorderBrush="Gray" BorderThickness="0.8">
+                        <StackPanel Orientation="Horizontal">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="350"/>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                    <Border x:Name="RoundBorder" Width="100" Height="100" CornerRadius="50" Margin="10 0 10 0" Background="#123456">
+                                        <TextBlock x:Name="CircleTextBlock" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="White" Margin="0 0 0 1"/>
+                                    </Border>
+                                    <StackPanel>
+                                        <TextBox x:Name="TopNameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 8 0 0" FontSize="22" FontWeight="Medium"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="Collor" Margin="10 10 0 0" FontSize="16" FontWeight="Light"/>
+                                    <TextBox x:Name="CollorTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="14" Width="180" HorizontalAlignment="Left"/>
+
+                                    <TextBlock Text="Letter" Margin="10 10 0 0" FontSize="16" FontWeight="Light"/>
+                                    <TextBox x:Name="LetterTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="14" Width="180" HorizontalAlignment="Left"/>
+                                </StackPanel>
+
+                                <Button Grid.Column="2" x:Name="EditTopRowDetails" Style="{StaticResource EditDetailsButton}" Click="EditTopRowDetailsButton_Click" HorizontalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="Pencil" VerticalAlignment="Center" Width="13" Height="13" Margin="0 1 4 0"/>
+                                        <TextBlock x:Name="EditTextblock" Text="Edit"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Row="1" Background="WhiteSmoke" CornerRadius="20" Height="200" Width="600" BorderBrush="Gray" BorderThickness="0.8">
+                        <Grid>
+
+                            <Grid>
+
+                                <StackPanel>
+                                    <TextBlock Text="Project Description" Margin="10 10 0 0" FontSize="20"/>
+
+                                    <TextBox x:Name="DescriptionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 20 0 0" FontSize="22" Width="580" Height="130" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Button x:Name="EditMiddleRowDetails" Style="{StaticResource EditDetailsButton}" Margin="0 10 20 0" Click="EditMiddleRowDetails_Click" VerticalAlignment="Top" HorizontalAlignment="Right">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Pencil" VerticalAlignment="Center" Width="13" Height="13" Margin="0 1 4 0"/>
+                                    <TextBlock Text="Edit"/>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+
+                    </Border>
+
+                    <Border Grid.Row="2" Background="WhiteSmoke" CornerRadius="20" Height="250" Width="600" BorderBrush="Gray" BorderThickness="0.8">
+                        <StackPanel>
+                            <TextBlock Text="Required Skills" Margin="10 10 0 0" FontSize="20"/>
+
+                            <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="5" x:Name="SkillsDataGrid">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="50" Binding="{Binding Id}"/>
+
+                                    <DataGridTemplateColumn Header="Category" IsReadOnly="True" Width="*" CanUserResize="False">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+
+                                                    <TextBlock Text="{Binding Category}" VerticalAlignment="Center"/>
+
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn Header="Name" IsReadOnly="True" Width="*" Binding="{Binding Name}" CanUserResize="False"/>
+                                    <DataGridTextColumn Header="Level" IsReadOnly="True" Width="*" Binding="{Binding Level}" CanUserResize="False"/>
+                                    <DataGridTextColumn Header="Date Of Acquisition" IsReadOnly="True" Width="*" Binding="{Binding DateOfAcquisition}" CanUserResize="False"/>
+
+
+                                    <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="auto" CanUserResize="False">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Style="{StaticResource GridEditButton}" Margin="5 0 0 0"  Click="EditSkillButton_Click">
+                                                        <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource GridButtonIcon}"/>
+                                                    </Button>
+                                                    <Button Style="{StaticResource GridRemoveButton}" Margin="5 0 0 0" Click="DeleteSkillButton_Click">
+                                                        <Icon:PackIconMaterial Kind="TrashCan" Style="{StaticResource GridButtonIcon}"/>
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </StackPanel>
+                        
+                    </Border>
+                </Grid>
+            </Border>
+            <Button x:Name="MinimizeButton" Click="MinimizeButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 40 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                <Icon:PackIconMaterial Kind="Minus" />
+            </Button>
+            <Button x:Name="CloseButton" Click="CloseButton_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 10 0" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent">
+                <Icon:PackIconMaterial Kind="Close" />
+            </Button>
+        </Grid>
+
+    </Border>
+
+
+
+
 </Window>

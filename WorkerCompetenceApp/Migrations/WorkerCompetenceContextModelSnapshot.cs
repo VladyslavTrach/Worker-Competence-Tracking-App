@@ -63,6 +63,9 @@ namespace WorkerCompetenceApp.Migrations
                     b.Property<string>("Collor")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Letter")
                         .HasColumnType("nvarchar(1)");
 
@@ -97,6 +100,9 @@ namespace WorkerCompetenceApp.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
 
                     b.Property<int>("WorkerId")
                         .HasColumnType("int");

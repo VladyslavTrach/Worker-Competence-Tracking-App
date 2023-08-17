@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\App.xaml
 9-1193114226
 
-57-1396000991
+59-1247274652
 231-477502774
 MainWindow.xaml;MVVM\Views\AddProjectView.xaml;MVVM\Views\AddSkillView.xaml;MVVM\Views\AddWorkerView.xaml;MVVM\Views\DetailsProjectView.xaml;MVVM\Views\DetailsWorkerView.xaml;MVVM\Views\EditSkillView.xaml;MVVM\Views\ProjectView.xaml;MVVM\Views\WorkerDataGridView.xaml;
 
-False
+True
 

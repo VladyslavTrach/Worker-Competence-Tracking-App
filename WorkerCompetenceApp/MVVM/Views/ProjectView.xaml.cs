@@ -45,7 +45,7 @@ namespace WorkerCompetenceApp.MVVM.Views
 
             foreach (Project p in projectsSQL)
             {
-                projects.Add(new Project() { Name = p.Name, Id = p.Id});
+                projects.Add(new Project() { Name = p.Name, Id = p.Id, Collor = p.Collor, Description = p.Description, Letter = p.Letter});
             }
 
             ProjectsDataGrid.ItemsSource = projects;
@@ -80,7 +80,8 @@ namespace WorkerCompetenceApp.MVVM.Views
 
         private void AddNewProjectButton_Click(object sender, RoutedEventArgs e)
         {
-            //new view
+            AddProjectView addProjectView = new AddProjectView();
+            addProjectView.Show();
         }
 
         private void ViewDetailProjectButton_Click(object sender, RoutedEventArgs e)
@@ -91,8 +92,8 @@ namespace WorkerCompetenceApp.MVVM.Views
 
                 if (selectedProject != null)
                 {
-                    //DetailsWorkerView detailsWorkerView = new DetailsWorkerView(selectedMember.Id);
-                    //detailsWorkerView.Show();
+                    DetailsProjectView detailsProjectView = new DetailsProjectView(selectedProject.Id);
+                    detailsProjectView.Show();
                 }
             }
 
