@@ -44,20 +44,19 @@
                             <Border Width="80" Height="80" Background="White" CornerRadius="100"
                                 DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
                                 <Ellipse>
-                                    <!--<Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Resource/1.jpg"/>
-                                </Ellipse.Fill>-->
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\Resource\4.png"/>
+                                    </Ellipse.Fill>
                                 </Ellipse>
                             </Border>
 
                             <!--Menu Title-->
-                            <TextBlock Text="Huyub" Foreground="White" FontSize="22" FontWeight="SemiBold"
+                            <TextBlock Text="IT Technologies" Foreground="White" FontSize="22" FontWeight="SemiBold"
                                    DockPanel.Dock="Top" TextAlignment="Center" Margin="5 25 0 10"/>
-                            <TextBlock Text="Members" Foreground="White" FontSize="14" FontWeight="SemiBold"
-                                   DockPanel.Dock="Top" TextAlignment="Center"/>
+
 
                             <!--Menu Separator-->
-                            <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="White"/>
+                            <Separator Margin="10 0 10 10" DockPanel.Dock="Top" Height="0.8" Background="White"/>
 
                             <!--Menu Buttons-->
                             <StackPanel DockPanel.Dock="Top">

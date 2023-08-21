@@ -99,5 +99,10 @@ namespace WorkerCompetenceApp.MVVM.Views
 
 
         }
+
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            PopulateDataGrid();
+        }
     }
 }

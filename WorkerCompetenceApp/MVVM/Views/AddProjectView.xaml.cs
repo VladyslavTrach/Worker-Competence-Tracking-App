@@ -28,18 +28,10 @@ namespace WorkerCompetenceApp.MVVM.Views
 
         private void AddNewProjectButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AddProject(NameTextBox.Text, DescriptionTextBox.Text);
+            this.Close();
         }
 
-        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         //private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         //{
@@ -49,42 +41,38 @@ namespace WorkerCompetenceApp.MVVM.Views
         //    }
         //}
 
-        //private void AddWorker(string FullName, string Position, string Specialization, string Language, string Phone, string Email)
-        //{
-        //    Random random = new Random();
-        //    int randomColor = random.Next(100000, 1000000);
+        private void AddProject(string Title, string Decription)
+        {
+            Random random = new Random();
+            int randomColor = random.Next(100000, 1000000);
 
-        //    char Letter = FullName[0];
+            char Letter = Title[0];
 
-        //    using WorkerCompetenceContext context = new WorkerCompetenceContext();
-
-
-        //    Worker worker = new Worker()
-        //    {
-        //        FullName = FullName,
-        //        Position = Position,
-        //        Specialization = Specialization,
-        //        Language = Language,
-        //        Phone = Phone,
-        //        Email = Email,
-        //        Collor = ("#" + randomColor.ToString()),
-        //        Letter = Letter
-        //    };
-
-        //    context.Workers.Add(worker);
-        //    context.SaveChanges();
-        //}
+            using WorkerCompetenceContext context = new WorkerCompetenceContext();
 
 
-        //private void CloseButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.Close();
-        //}
+            Project project = new Project()
+            {
+                Name = Title,
+                Description = Decription,
+                Collor = ("#" + randomColor.ToString()),
+                Letter = Letter
+            };
 
-        //private void MinimizeButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    WindowState = WindowState.Minimized;
-        //}
+            context.Projects.Add(project);
+            context.SaveChanges();
+        }
+
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
 
         //private void AddNewWorkerButton_Click(object sender, RoutedEventArgs e)
         //{

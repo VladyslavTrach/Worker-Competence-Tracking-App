@@ -153,7 +153,6 @@ C:\Worker-Competence-Tracking-App\WorkerCompetenceApp\obj\Debug\net7.0-windows\W
 C:\Worker-Competence-Tracking-App\WorkerCompetenceApp\obj\Debug\net7.0-windows\WorkerCompetenceApp.genruntimeconfig.cache
 C:\Worker-Competence-Tracking-App\WorkerCompetenceApp\obj\Debug\net7.0-windows\ref\WorkerCompetenceApp.dll
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\WorkerCompetenceApp.exe
-C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\Resource\1.jpg
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\WorkerCompetenceApp.deps.json
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\WorkerCompetenceApp.runtimeconfig.json
 C:\Users\vlad0\source\repos\C#\WorkerCompetenceApp\WorkerCompetenceApp\WorkerCompetenceApp\bin\Debug\net7.0-windows\WorkerCompetenceApp.dll

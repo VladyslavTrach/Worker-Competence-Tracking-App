@@ -58,7 +58,7 @@ namespace WorkerCompetenceApp.Views
                     Name = s.Name,
                     Level = s.Level,
                     DateOfAcquisition = s.DateOfAcquisition,
-                    WorkerId = s.WorkerId
+                    ProjectId = s.ProjectId
                 });
             }
 
@@ -96,7 +96,7 @@ namespace WorkerCompetenceApp.Views
                 TopPositionTextBox.IsReadOnly = false;
                 TopLangTextBox.IsReadOnly = false;
                 LetterTextBox.IsReadOnly = false;
-                CollorTextBox.IsReadOnly = false;                
+                CollorTextBox.IsReadOnly = false;
 
                 TopNameTextBox.Background = Brushes.Green;
                 TopPositionTextBox.Background = Brushes.Green;
@@ -108,7 +108,7 @@ namespace WorkerCompetenceApp.Views
                 EditTopTextBlock.Text = "Save";
             }
             else
-            {            
+            {
                 switch (IsTopRowDetailsCorrect())
                 {
                     case "Correct":
@@ -239,7 +239,7 @@ namespace WorkerCompetenceApp.Views
                         EmailNameTextBox.Background = Brushes.Red;
                         break;
                 }
-               
+
             }
         }
 
@@ -303,24 +303,24 @@ namespace WorkerCompetenceApp.Views
 
         private void EditWorker(int id, string newFullName, string newPosition, string newSpecialization, string newLanguage, string newPhone, string newEmail, string newLetter, string newCollor)
         {
-                    using (WorkerCompetenceContext context = new WorkerCompetenceContext())
-                    {
-                        Worker workerToEdit = context.Workers.FirstOrDefault(w => w.Id == id);
+            using (WorkerCompetenceContext context = new WorkerCompetenceContext())
+            {
+                Worker workerToEdit = context.Workers.FirstOrDefault(w => w.Id == id);
 
-                        if (workerToEdit != null)
-                        {
-                            workerToEdit.FullName = newFullName;
-                            workerToEdit.Position = newPosition;
-                            workerToEdit.Specialization = newSpecialization;
-                            workerToEdit.Language = newLanguage;
-                            workerToEdit.Phone = newPhone;
-                            workerToEdit.Email = newEmail;
-                            workerToEdit.Letter = newLetter[0];
-                            workerToEdit.Collor = newCollor;
-                        }
+                if (workerToEdit != null)
+                {
+                    workerToEdit.FullName = newFullName;
+                    workerToEdit.Position = newPosition;
+                    workerToEdit.Specialization = newSpecialization;
+                    workerToEdit.Language = newLanguage;
+                    workerToEdit.Phone = newPhone;
+                    workerToEdit.Email = newEmail;
+                    workerToEdit.Letter = newLetter[0];
+                    workerToEdit.Collor = newCollor;
+                }
 
-                        context.SaveChanges();
-                    }  
+                context.SaveChanges();
+            }
         }
 
         public void ClearAllTextBoxCollor()
@@ -347,6 +347,5 @@ namespace WorkerCompetenceApp.Views
         {
             WindowState = WindowState.Minimized;
         }
-    } 
+    }
 }
-

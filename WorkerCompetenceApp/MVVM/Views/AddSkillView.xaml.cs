@@ -24,13 +24,15 @@ namespace WorkerCompetenceApp.Views
     public partial class AddSkillView : Window
     {
         private int workerId;
+        private int projectId;
 
-        public AddSkillView(int WorkerId)
+        public AddSkillView(int WorkerId = 0, int ProjectId = 0)
         {
             InitializeComponent();
             PopulateListBoxes();
 
             this.workerId = WorkerId;
+            this.projectId = ProjectId;
 
             CategoryComboBox.SelectionChanged += CategoryComboBox_SelectionChanged;
         }
@@ -111,7 +113,7 @@ namespace WorkerCompetenceApp.Views
                     OptionComboBox.SelectedIndex = 0;
                     break;
 
-                case "Cloud Services and Deployment":
+                case "Cloud Services":
                     OptionComboBox.Items.Clear();
                     foreach (string cloudServicesAndDeployment in CategoriesHelper.CloudServicesAndDeployment)
                     {
@@ -120,7 +122,7 @@ namespace WorkerCompetenceApp.Views
                     OptionComboBox.SelectedIndex = 0;
                     break;
 
-                case "Software Development Methodologies":
+                case "Development Methodologies":
                     OptionComboBox.Items.Clear();
                     foreach (string softwareDevelopmentMethodologies in CategoriesHelper.SoftwareDevelopmentMethodologies)
                     {
@@ -147,7 +149,7 @@ namespace WorkerCompetenceApp.Views
                     OptionComboBox.SelectedIndex = 0;
                     break;
 
-                case "Software Design Patterns":
+                case "Design Patterns":
                     OptionComboBox.Items.Clear();
                     foreach (string designPatterns in CategoriesHelper.DesignPatterns)
                     {
@@ -168,7 +170,7 @@ namespace WorkerCompetenceApp.Views
             }
         }
 
-        private void AddSkill(string Category, string Name, string Level, DateTime DateOfAcquisition, int workerId)
+        private void AddSkill(string Category, string Name, string Level, DateTime DateOfAcquisition, int workerId, int projectId)
         {
             using WorkerCompetenceContext context = new WorkerCompetenceContext();
 
@@ -178,7 +180,8 @@ namespace WorkerCompetenceApp.Views
                 Name = Name,
                 Level = Level,
                 DateOfAcquisition = DateOfAcquisition,
-                WorkerId = workerId
+                WorkerId = workerId,
+                ProjectId = projectId
             };
 
             context.SkillSets.Add(skill);
@@ -191,7 +194,7 @@ namespace WorkerCompetenceApp.Views
             if (selectedDateTime.HasValue)
             {
                 DateTime extractedDate = selectedDateTime.Value;
-                AddSkill(CategoryComboBox.Text, OptionComboBox.Text, LevelComboBox.Text, extractedDate.Date, this.workerId); // Use the stored WorkerId
+                AddSkill(CategoryComboBox.Text, OptionComboBox.Text, LevelComboBox.Text, extractedDate.Date, this.workerId, this.projectId); // Use the stored WorkerId
                 this.Close();
             }
             else

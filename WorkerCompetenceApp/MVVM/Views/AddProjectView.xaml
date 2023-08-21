@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkerCompetenceApp.MVVM.Views"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Height="390" Width="660" 
+        Height="390" Width="360" 
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent" ResizeMode="NoResize">
 
@@ -16,7 +16,7 @@
     <Border Background="#979797" CornerRadius="15">
         <Grid>
             <TextBlock Text="Project Details" FontSize="26" Margin="20 7 0 0"/>
-            <Border Background="WhiteSmoke" CornerRadius="10" Height="320" Width="640" Margin="0 30 0 0">
+            <Border Background="WhiteSmoke" CornerRadius="10" Height="320" Width="340" Margin="0 30 0 0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="280"/>
@@ -24,7 +24,7 @@
                     </Grid.RowDefinitions>
 
 
-                    <Border Grid.Row="0" Background="WhiteSmoke" CornerRadius="20" Height="260" Width="600" BorderBrush="Gray" BorderThickness="0.8">
+                    <Border Grid.Row="0" Background="WhiteSmoke" CornerRadius="20" Height="260" Width="300" BorderBrush="Gray" BorderThickness="0.8">
 
                         <Grid>
                             <StackPanel>
@@ -34,7 +34,7 @@
                                 <TextBox x:Name="NameTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="28" Width="240" HorizontalAlignment="Center" IsReadOnly="False"/>
 
                                 <TextBlock Text="Description" Margin="10 15 0 0" FontSize="16" FontWeight="Light" HorizontalAlignment="Center"/>
-                                <TextBox x:Name="DescriptionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="500" Height="100" HorizontalAlignment="Center" IsReadOnly="False" BorderThickness="1"/>
+                                <TextBox x:Name="DescriptionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 0 0 0" FontSize="22" Width="240" Height="100" HorizontalAlignment="Center" IsReadOnly="False" BorderThickness="1"/>
                             </StackPanel>
 
                             

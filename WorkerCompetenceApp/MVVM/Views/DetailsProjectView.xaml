@@ -17,8 +17,8 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="140"/>
-                        <RowDefinition Height="280"/>
-                        <RowDefinition Height="270"/>
+                        <RowDefinition Height="160"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <Border Background="WhiteSmoke" CornerRadius="20" Height="120" Width="600" BorderBrush="Gray" BorderThickness="0.8">
@@ -49,7 +49,7 @@
                                 <Button Grid.Column="2" x:Name="EditTopRowDetails" Style="{StaticResource EditDetailsButton}" Click="EditTopRowDetailsButton_Click" HorizontalAlignment="Center">
                                     <StackPanel Orientation="Horizontal">
                                         <Icon:PackIconMaterial Kind="Pencil" VerticalAlignment="Center" Width="13" Height="13" Margin="0 1 4 0"/>
-                                        <TextBlock x:Name="EditTextblock" Text="Edit"/>
+                                        <TextBlock x:Name="EditTopTextBlock" Text="Edit"/>
                                     </StackPanel>
                                 </Button>
                             </Grid>
@@ -57,7 +57,7 @@
                         </StackPanel>
                     </Border>
 
-                    <Border Grid.Row="1" Background="WhiteSmoke" CornerRadius="20" Height="200" Width="600" BorderBrush="Gray" BorderThickness="0.8">
+                    <Border Grid.Row="1" Background="WhiteSmoke" CornerRadius="20" Height="140" Width="600" BorderBrush="Gray" BorderThickness="0.8">
                         <Grid>
 
                             <Grid>
@@ -65,27 +65,39 @@
                                 <StackPanel>
                                     <TextBlock Text="Project Description" Margin="10 10 0 0" FontSize="20"/>
 
-                                    <TextBox x:Name="DescriptionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 20 0 0" FontSize="22" Width="580" Height="130" HorizontalAlignment="Left"/>
+                                    <TextBox x:Name="DescriptionTextBox" Style="{DynamicResource TextBoxStyleDetails}" Margin="10 20 0 0" FontSize="22" Width="580" Height="70" HorizontalAlignment="Left"/>
                                 </StackPanel>
                             </Grid>
 
                             <Button x:Name="EditMiddleRowDetails" Style="{StaticResource EditDetailsButton}" Margin="0 10 20 0" Click="EditMiddleRowDetails_Click" VerticalAlignment="Top" HorizontalAlignment="Right">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Pencil" VerticalAlignment="Center" Width="13" Height="13" Margin="0 1 4 0"/>
-                                    <TextBlock Text="Edit"/>
+                                    <TextBlock x:Name="EditBottomTextBlock" Text="Edit"/>
                                 </StackPanel>
                             </Button>
                         </Grid>
 
                     </Border>
 
-                    <Border Grid.Row="2" Background="WhiteSmoke" CornerRadius="20" Height="250" Width="600" BorderBrush="Gray" BorderThickness="0.8">
+                    <Border Grid.Row="2" Background="WhiteSmoke" CornerRadius="20" Height="400" Width="600" BorderBrush="Gray" BorderThickness="0.8">
                         <StackPanel>
-                            <TextBlock Text="Required Skills" Margin="10 10 0 0" FontSize="20"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Required Skills" Margin="10 10 0 0" FontSize="20"/>
+                                <Button Grid.Row="2" x:Name="RefreshButton" Style="{StaticResource TopButton}" Margin="0 5 0 0" HorizontalAlignment="Left" Click="RefreshButton_Click">
+                                    <Icon:PackIconMaterial Kind="Refresh" Width="15" Height="15"/>
+                                </Button>
+                                <Button x:Name="AddNewSkillButton" Style="{StaticResource AddButton}" Click="AddNewSkillButton_Click" Margin="270 10 0 0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
+                                        <TextBlock Text="Add New Skill"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+
 
                             <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="5" x:Name="SkillsDataGrid">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="50" Binding="{Binding Id}"/>
+                                    <DataGridTextColumn Header="Id" IsReadOnly="True" CanUserResize="False" Width="60" Binding="{Binding Id}"/>
 
                                     <DataGridTemplateColumn Header="Category" IsReadOnly="True" Width="*" CanUserResize="False">
                                         <DataGridTemplateColumn.CellTemplate>
@@ -123,7 +135,7 @@
                             </DataGrid>
 
                         </StackPanel>
-                        
+
                     </Border>
                 </Grid>
             </Border>
